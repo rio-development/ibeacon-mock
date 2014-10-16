@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b91-JZ-5yl">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--iBeacon-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="iBeacon" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="mainView" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWD-VA-QXx">
+                                <rect key="frame" x="32" y="80" width="536" height="53"/>
+                                <string key="text">このアプリは、
+iBeaconのデモアプリです</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIg-Uz-r04">
+                                <rect key="frame" x="32" y="165" width="536" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HEj-1W-qe7"/>
+                                </constraints>
+                                <string key="text">デモアプリでは、GeoFencingを利用した通知表示と2つのビーコンモジュールとの距離をモニタリングするアプリとなっております。
+
+下の「開始」ボタンをタップして、iBeacon を実際に体験してみてください。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-fp-Td5">
+                                <rect key="frame" x="268" y="281" width="64" height="51"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <state key="normal" title="開始">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RPO-OE-TCY" kind="push" id="GkG-El-Vh8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="textview2" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-kY-rdq">
+                                <rect key="frame" x="32" y="348" width="520" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4NP-vg-AT2"/>
+                                </constraints>
+                                <string key="text">「開始」ボタンをタップすると、２つのビーコンモジュールの距離をモニタリングする画面となります。
+
+上の円はビーコン１の推定距離を表示し、下の円はビーコン２の推定距離を表示します。
+また、次の画面を起動した後にアプリを閉じ、ビーコンの電波を受信できない位置に移動すると通知を送るようになっており、また逆に、ビーコンの電波のエリアに入るときも通知を送る仕組みを体験できます。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="h8c-fp-Td5" secondAttribute="centerX" id="2tb-O2-lAA"/>
+                            <constraint firstItem="OIg-Uz-r04" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="574-XL-xjf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NWD-VA-QXx" secondAttribute="trailing" constant="16" id="BcL-5f-5l3"/>
+                            <constraint firstItem="NWD-VA-QXx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="Fml-4E-rGT"/>
+                            <constraint firstItem="h8c-fp-Td5" firstAttribute="top" secondItem="OIg-Uz-r04" secondAttribute="bottom" constant="16" id="Gpe-sx-M0l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OIg-Uz-r04" secondAttribute="trailing" constant="16" id="O01-9B-3am"/>
+                            <constraint firstItem="NWD-VA-QXx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="fYH-yF-WxN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f3W-kY-rdq" secondAttribute="trailing" constant="32" id="gE4-yt-A6j"/>
+                            <constraint firstAttribute="centerX" secondItem="OIg-Uz-r04" secondAttribute="centerX" id="jAf-1j-ueG"/>
+                            <constraint firstItem="f3W-kY-rdq" firstAttribute="top" secondItem="h8c-fp-Td5" secondAttribute="bottom" constant="16" id="jFx-R6-EEI"/>
+                            <constraint firstItem="f3W-kY-rdq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="u66-Ez-V6s"/>
+                            <constraint firstItem="OIg-Uz-r04" firstAttribute="top" secondItem="NWD-VA-QXx" secondAttribute="bottom" constant="32" id="uPI-5S-oUB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sPw-eU-WfF">
+                        <barButtonItem key="rightBarButtonItem" id="Oh7-WP-bVD">
+                            <connections>
+                                <action selector="toggleMonitor:" destination="vXZ-lx-hvc" id="ZsD-2f-QRB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barButton" destination="Oh7-WP-bVD" id="hZw-lU-AcU"/>
+                        <outlet property="mainView" destination="kh9-bI-dsS" id="IA5-4m-Rnw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="143"/>
+        </scene>
+        <!--Monitoring-->
+        <scene sceneID="bqw-1E-3kU">
+            <objects>
+                <viewController title="Monitoring" id="RPO-OE-TCY" customClass="MonitoringController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8eE-sH-Y1I"/>
+                        <viewControllerLayoutGuide type="bottom" id="z37-X8-eVl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nn5-v8-irt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-kn-BN7">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" restorationIdentifier="progressView" translatesAutoresizingMaskIntoConstraints="NO" id="McA-ek-MGl" customClass="UAProgressView">
+                                        <rect key="frame" x="134" y="32" width="300" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="G5M-ah-Bdr"/>
+                                            <constraint firstAttribute="height" constant="300" id="pxH-8W-8Eg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" restorationIdentifier="progressView2" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-NH-D5w" customClass="UAProgressView">
+                                        <rect key="frame" x="134" y="364" width="300" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="OvS-vA-rEG"/>
+                                            <constraint firstAttribute="height" constant="300" id="va4-KL-i18"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FsF-NH-D5w" firstAttribute="top" secondItem="yLD-kn-BN7" secondAttribute="top" constant="364" id="ADV-ZB-3i1"/>
+                                    <constraint firstItem="McA-ek-MGl" firstAttribute="top" secondItem="yLD-kn-BN7" secondAttribute="top" constant="32" id="GrH-6c-KJO"/>
+                                    <constraint firstAttribute="centerX" secondItem="FsF-NH-D5w" secondAttribute="centerX" id="INR-ki-xyx"/>
+                                    <constraint firstAttribute="centerX" secondItem="McA-ek-MGl" secondAttribute="centerX" id="VWx-bB-xuo"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="yLD-kn-BN7" secondAttribute="bottom" id="QNJ-tT-aMJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yLD-kn-BN7" secondAttribute="trailing" id="VWN-Uk-Mhf"/>
+                            <constraint firstItem="yLD-kn-BN7" firstAttribute="leading" secondItem="Nn5-v8-irt" secondAttribute="leadingMargin" id="mLu-ku-2H6"/>
+                            <constraint firstItem="yLD-kn-BN7" firstAttribute="top" secondItem="Nn5-v8-irt" secondAttribute="topMargin" id="xQL-7t-BzA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VhS-0t-NbY">
+                        <barButtonItem key="rightBarButtonItem" title="Rio" id="UCt-8X-aEC">
+                            <connections>
+                                <segue destination="fy0-ZP-a3M" kind="show" id="cmL-MN-usg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="progressView" destination="McA-ek-MGl" id="CTf-jx-wV9"/>
+                        <outlet property="progressView2" destination="FsF-NH-D5w" id="Yp0-yE-cQx"/>
+                        <outlet property="scrollView" destination="yLD-kn-BN7" id="noc-54-GnY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCH-Eh-c92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824" y="143"/>
+        </scene>
+        <!--webview-->
+        <scene sceneID="AtX-jJ-2ck">
+            <objects>
+                <viewController storyboardIdentifier="webview" title="webview" id="fy0-ZP-a3M" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uPt-1d-IG3"/>
+                        <viewControllerLayoutGuide type="bottom" id="dlI-aS-6i7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2d2-7n-nkc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-01-UXx">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="d8T-01-UXx" secondAttribute="bottom" id="46Z-Qr-4gb"/>
+                            <constraint firstAttribute="centerX" secondItem="d8T-01-UXx" secondAttribute="centerX" id="Bdf-KM-ma6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d8T-01-UXx" secondAttribute="trailing" id="Ovm-y7-U9I"/>
+                            <constraint firstItem="d8T-01-UXx" firstAttribute="top" secondItem="uPt-1d-IG3" secondAttribute="bottom" id="iuP-IB-YgC"/>
+                            <constraint firstAttribute="centerY" secondItem="d8T-01-UXx" secondAttribute="centerY" id="lwS-2h-Z5k"/>
+                            <constraint firstItem="d8T-01-UXx" firstAttribute="leading" secondItem="2d2-7n-nkc" secondAttribute="leadingMargin" id="xHa-DL-bIT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lwS-2h-Z5k"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="d8T-01-UXx" id="c05-PO-tyB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="it8-9W-ttq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2523" y="143"/>
+        </scene>
+        <!--Nav-->
+        <scene sceneID="FAt-8z-PZ2">
+            <objects>
+                <navigationController title="Nav" automaticallyAdjustsScrollViewInsets="NO" id="b91-JZ-5yl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7k-kv-sGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="w4o-gz-fMv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kbb-ta-2ey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="143"/>
+        </scene>
+    </scenes>
+</document>
