@@ -53,7 +53,12 @@
         self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:self.proximityUUID identifier:@"jp.ne.rio.sample.ibeacon"];
         
         // Beaconによる領域観測を開始
-        [self.locationManager startMonitoringForRegion:self.beaconRegion];
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            // iOS8 による位置情報認証の変更による実装
+            [self.locationManager requestAlwaysAuthorization];
+        } else {
+            [self.locationManager startMonitoringForRegion:self.beaconRegion];
+        }
         //self.barButton.title = @"停止";
         
         // progressView 1
@@ -86,6 +91,9 @@
             }
             [(UILabel *)progressView.centralView setText:mm];
         };
+    } else {
+        // iBeaconが利用できない端末の場合
+        NSLog(@"iBeaconを利用できません。");
     }
 }
 
@@ -97,6 +105,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        // ユーザが位置情報の使用を許可していない
+        NSLog(@"位置情報を許可していない");
+    } else if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        // ユーザが位置情報の使用を常に許可している場合
+        [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    } else if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        // ユーザが位置情報の使用を使用中のみ許可している場合
+        [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
