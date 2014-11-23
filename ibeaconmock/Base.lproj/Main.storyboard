@@ -19,10 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWD-VA-QXx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このアプリは、iBeaconのデモアプリです" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWD-VA-QXx">
                                 <rect key="frame" x="32" y="80" width="536" height="53"/>
-                                <string key="text">このアプリは、
-iBeaconのデモアプリです</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,16 +78,8 @@ iBeaconのデモアプリです</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sPw-eU-WfF">
-                        <barButtonItem key="rightBarButtonItem" id="Oh7-WP-bVD">
-                            <connections>
-                                <action selector="toggleMonitor:" destination="vXZ-lx-hvc" id="ZsD-2f-QRB"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="Oh7-WP-bVD"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="barButton" destination="Oh7-WP-bVD" id="hZw-lU-AcU"/>
-                        <outlet property="mainView" destination="kh9-bI-dsS" id="IA5-4m-Rnw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

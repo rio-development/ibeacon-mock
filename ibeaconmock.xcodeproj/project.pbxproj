@@ -24,8 +24,6 @@
 		680DFF5E19B952CF00967574 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680DFF5D19B952CF00967574 /* CoreLocation.framework */; };
 		680DFF6019B9B8D200967574 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680DFF5F19B9B8D200967574 /* CoreBluetooth.framework */; };
 		682406A119E6B96F00EC49FE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682406A019E6B96F00EC49FE /* WebViewController.m */; };
-		685B515119E13D20006DA4FA /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B515019E13D20006DA4FA /* TableViewCell.xib */; };
-		685B515419E13FB9006DA4FA /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B515319E13FB9006DA4FA /* CustomTableViewCell.m */; };
 		68623FB219E571E400CE9BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68623FB019E571E400CE9BFE /* Main.storyboard */; };
 		68F1047919E5254700CC1199 /* MonitoringController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F1047819E5254700CC1199 /* MonitoringController.m */; };
 /* End PBXBuildFile section */
@@ -64,9 +62,6 @@
 		680DFF5F19B9B8D200967574 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		6824069F19E6B96F00EC49FE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		682406A019E6B96F00EC49FE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		685B515019E13D20006DA4FA /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		685B515219E13FB9006DA4FA /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
-		685B515319E13FB9006DA4FA /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		685B515619E140D1006DA4FA /* TableViewConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewConst.h; sourceTree = "<group>"; };
 		68623FB119E571E400CE9BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68F1047719E5254700CC1199 /* MonitoringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringController.h; sourceTree = "<group>"; };
@@ -150,7 +145,6 @@
 			children = (
 				68623FB019E571E400CE9BFE /* Main.storyboard */,
 				685B515519E1409E006DA4FA /* Const */,
-				685B514F19E13CD6006DA4FA /* TableViewCell */,
 				6802053819B8673A00D2FCFB /* AppDelegate.h */,
 				6802053919B8673B00D2FCFB /* AppDelegate.m */,
 				6802054119B8673B00D2FCFB /* ViewController.h */,
@@ -192,16 +186,6 @@
 				6802055419B8673B00D2FCFB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		685B514F19E13CD6006DA4FA /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				685B515019E13D20006DA4FA /* TableViewCell.xib */,
-				685B515219E13FB9006DA4FA /* CustomTableViewCell.h */,
-				685B515319E13FB9006DA4FA /* CustomTableViewCell.m */,
-			);
-			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		685B515519E1409E006DA4FA /* Const */ = {
@@ -294,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6802054519B8673B00D2FCFB /* Images.xcassets in Resources */,
-				685B515119E13D20006DA4FA /* TableViewCell.xib in Resources */,
 				6802053419B8673A00D2FCFB /* InfoPlist.strings in Resources */,
 				68623FB219E571E400CE9BFE /* Main.storyboard in Resources */,
 			);
@@ -352,7 +335,6 @@
 				682406A119E6B96F00EC49FE /* WebViewController.m in Sources */,
 				68F1047919E5254700CC1199 /* MonitoringController.m in Sources */,
 				6802053A19B8673B00D2FCFB /* AppDelegate.m in Sources */,
-				685B515419E13FB9006DA4FA /* CustomTableViewCell.m in Sources */,
 				6802053619B8673A00D2FCFB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

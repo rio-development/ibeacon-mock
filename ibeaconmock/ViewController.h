@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *mainTable;
-@property NSMutableArray *cells;
-- (IBAction)toggleMonitor:(id)sender;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
-@property (strong, nonatomic) IBOutlet UIView *mainView;
+@interface ViewController : UIViewController
 
 @end
