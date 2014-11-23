@@ -11,11 +11,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-
 @interface MonitoringController () <CLLocationManagerDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UAProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView1;
 @property (weak, nonatomic) IBOutlet UAProgressView *progressView2;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView3;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView4;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView5;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView6;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView7;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView8;
+@property (weak, nonatomic) IBOutlet UAProgressView *progressView9;
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) NSUUID *proximityUUID;
 @property (nonatomic) CLBeaconRegion *beaconRegion;
@@ -29,17 +34,24 @@
     self.navigationController.topViewController.title = @"モニタリング中";
 
     // Do any additional setup after loading the view.
-    
-    //UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60.0, 32.0)];
-    //textLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:32];
-    //textLabel.textAlignment = NSTextAlignmentCenter;
-    //textLabel.textColor = self.progressView.tintColor;
-    //textLabel.backgroundColor = [UIColor clearColor];
-    //self.progressView.centralView = textLabel;
-    self.progressView.lineWidth = 20.0;
-    self.progressView.borderWidth = 20.0;
-    self.progressView2.lineWidth = 20.0;
-    self.progressView2.borderWidth = 20.0;
+    self.progressView1.lineWidth = 16.0;
+    self.progressView1.borderWidth = 0.0;
+    self.progressView2.lineWidth = 16.0;
+    self.progressView2.borderWidth = 0.0;
+    self.progressView3.lineWidth = 16.0;
+    self.progressView3.borderWidth = 0.0;
+    self.progressView4.lineWidth = 16.0;
+    self.progressView4.borderWidth = 0.0;
+    self.progressView5.lineWidth = 16.0;
+    self.progressView5.borderWidth = 0.0;
+    self.progressView6.lineWidth = 16.0;
+    self.progressView6.borderWidth = 0.0;
+    self.progressView7.lineWidth = 16.0;
+    self.progressView7.borderWidth = 0.0;
+    self.progressView8.lineWidth = 16.0;
+    self.progressView8.borderWidth = 0.0;
+    self.progressView9.lineWidth = 16.0;
+    self.progressView9.borderWidth = 0.0;
     
     if ([CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
         // CLLocationManager の生成とデリゲートの設定
@@ -59,38 +71,73 @@
         } else {
             [self.locationManager startMonitoringForRegion:self.beaconRegion];
         }
-        //self.barButton.title = @"停止";
-        
+
+        // progressView が変わった時の処理
+        void (^progressChangedBlock)(UAProgressView *progressView, float progress);
+        progressChangedBlock = ^(UAProgressView *progressView, float progress) {
+            NSString *mm;
+            if (progress > 0) {
+                mm = [NSString stringWithFormat:@"約%2.2fm", progress * 10];
+            } else {
+                mm = @"不明";
+            }
+            [(UILabel *)progressView.centralView setText:mm];
+        };
         // progressView 1
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
         [label setTextAlignment:NSTextAlignmentCenter];
         label.userInteractionEnabled = NO; // Allows tap to pass through to the progress view.
-        self.progressView.centralView = label;
-        
-        self.progressView.progressChangedBlock = ^(UAProgressView *progressView, float progress) {
-            NSString *mm;
-            if (progress > 0) {
-                mm = [NSString stringWithFormat:@"約%2.2fm", progress * 10 * -1 + 10];
-            } else {
-                mm = @"不明";
-            }
-            [(UILabel *)progressView.centralView setText:mm];
-        };
+        self.progressView1.centralView = label;
+        self.progressView1.progressChangedBlock = progressChangedBlock;
+
         // progressView 2
         UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
         [label2 setTextAlignment:NSTextAlignmentCenter];
-        label2.userInteractionEnabled = NO; // Allows tap to pass through to the progress view.
         self.progressView2.centralView = label2;
-        
-        self.progressView2.progressChangedBlock = ^(UAProgressView *progressView, float progress) {
-            NSString *mm;
-            if (progress > 0) {
-                mm = [NSString stringWithFormat:@"約%2.2fm", progress * 10 * -1 + 10];
-            } else {
-                mm = @"不明";
-            }
-            [(UILabel *)progressView.centralView setText:mm];
-        };
+        self.progressView2.progressChangedBlock = progressChangedBlock;
+
+        // progressView 3
+        UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label3 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView3.centralView = label3;
+        self.progressView3.progressChangedBlock = progressChangedBlock;
+
+        // progressView 4
+        UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label4 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView4.centralView = label4;
+        self.progressView4.progressChangedBlock = progressChangedBlock;
+
+        // progressView 5
+        UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label5 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView5.centralView = label5;
+        self.progressView5.progressChangedBlock = progressChangedBlock;
+
+        // progressView 6
+        UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label6 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView6.centralView = label6;
+        self.progressView6.progressChangedBlock = progressChangedBlock;
+
+        // progressView 7
+        UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label7 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView7.centralView = label7;
+        self.progressView7.progressChangedBlock = progressChangedBlock;
+
+        // progressView 8
+        UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label8 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView8.centralView = label8;
+        self.progressView8.progressChangedBlock = progressChangedBlock;
+
+        // progressView 9
+        UILabel *label9 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80.0, 20.0)];
+        [label9 setTextAlignment:NSTextAlignmentCenter];
+        self.progressView9.centralView = label9;
+        self.progressView9.progressChangedBlock = progressChangedBlock;
+    
     } else {
         // iBeaconが利用できない端末の場合
         NSLog(@"iBeaconを利用できません。");
@@ -98,8 +145,6 @@
 }
 
 -(void)viewDidLayoutSubviews {
-    [self.scrollView setContentSize: CGSizeMake(300, 332*2)];
-    [self.scrollView flashScrollIndicators];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,8 +198,15 @@
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
 {
     NSString *message = @"エリアから出ました";
-    [(UILabel *)self.progressView.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView1.centralView setText:@"エリア外"];
     [(UILabel *)self.progressView2.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView3.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView4.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView5.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView6.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView7.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView8.centralView setText:@"エリア外"];
+    [(UILabel *)self.progressView9.centralView setText:@"エリア外"];
     [self sendLocalNotificationForMessage:message];
     if ([region isMemberOfClass:[CLBeaconRegion class]] && [CLLocationManager isRangingAvailable]) {
         [self.locationManager stopRangingBeaconsInRegion:(CLBeaconRegion *)region];
@@ -168,30 +220,47 @@
     if (beacons.count > 0) {
         for(CLBeacon *beacon in beacons){
             progress = 0.0;
+            switch (beacon.proximity) {
+                case CLProximityImmediate:
+                case CLProximityNear:
+                case CLProximityFar:
+                    progress = beacon.accuracy / 10;
+                    break;
+                case CLProximityUnknown:
+                    break;
+            }
             if (beacon.minor.intValue == 1) {
-                switch (beacon.proximity) {
-                    case CLProximityImmediate:
-                    case CLProximityNear:
-                    case CLProximityFar:
-                        progress = (-1 * (beacon.accuracy - 10)) / 10;
-                        break;
-                    case CLProximityUnknown:
-                        break;
-                }
-                [self.progressView setProgress:progress];
+                [self.progressView1 setProgress:progress];
             }
             if (beacon.minor.intValue == 2) {
-                switch (beacon.proximity) {
-                    case CLProximityImmediate:
-                    case CLProximityNear:
-                    case CLProximityFar:
-                        progress = (-1 * (beacon.accuracy - 10)) / 10;
-                        break;
-                    case CLProximityUnknown:
-                        break;
-                }
                 [self.progressView2 setProgress:progress];
             }
+            if (beacon.minor.intValue == 3) {
+                [self.progressView3 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 4) {
+                [self.progressView4 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 5) {
+                [self.progressView5 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 5) {
+                [self.progressView5 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 6) {
+                [self.progressView6 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 7) {
+                [self.progressView7 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 8) {
+                [self.progressView8 setProgress:progress];
+            }
+            if (beacon.minor.intValue == 9) {
+                [self.progressView9 setProgress:progress];
+            }
+
+            // Logに出力
             NSString *rangeMessage = [NSString stringWithFormat:@"proximity:%ld", beacon.proximity];
             NSString *message = [NSString stringWithFormat:@": major:%@, minor:%@, accuracy:%f, rssi:%ld", beacon.major, beacon.minor, beacon.accuracy, (long)beacon.rssi];
             NSLog([rangeMessage stringByAppendingString:message]);
@@ -199,30 +268,6 @@
     }
 
 }
-
-//- (IBAction)toggleMonitor:(id)sender {
-//    return;
-//    if (self.beaconRegion) {
-//        [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
-//        [self.locationManager stopMonitoringForRegion:self.beaconRegion];
-//        self.beaconRegion = nil;
-//    } else {
-//        if ([CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
-//            // CLLocationManager の生成とデリゲートの設定
-//            self.locationManager = [CLLocationManager new];
-//            self.locationManager.delegate = self;
-//            
-//            // 生成したUUIDからNSUUIDを生成
-//            self.proximityUUID = [[NSUUID alloc] initWithUUIDString:@"00000000-86C3-1001-B000-001C4D7C17F3"];
-//            
-//            // CLBeaconRegionを生成
-//            self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:self.proximityUUID identifier:@"jp.ne.rio.sample.ibeacon"];
-//            
-//            // Beaconによる領域観測を開始
-//            [self.locationManager startMonitoringForRegion:self.beaconRegion];
-//        }
-//    }
-//}
 
 #pragma mark - Private methods
 
@@ -235,14 +280,5 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

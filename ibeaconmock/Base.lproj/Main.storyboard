@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -106,41 +107,234 @@ iBeaconのデモアプリです</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-kn-BN7">
-                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" restorationIdentifier="progressView" translatesAutoresizingMaskIntoConstraints="NO" id="McA-ek-MGl" customClass="UAProgressView">
-                                        <rect key="frame" x="134" y="32" width="300" height="300"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="G5M-ah-Bdr"/>
-                                            <constraint firstAttribute="height" constant="300" id="pxH-8W-8Eg"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" restorationIdentifier="progressView2" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-NH-D5w" customClass="UAProgressView">
-                                        <rect key="frame" x="134" y="364" width="300" height="300"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="OvS-vA-rEG"/>
-                                            <constraint firstAttribute="height" constant="300" id="va4-KL-i18"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView" translatesAutoresizingMaskIntoConstraints="NO" id="McA-ek-MGl" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="32" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstItem="FsF-NH-D5w" firstAttribute="top" secondItem="yLD-kn-BN7" secondAttribute="top" constant="364" id="ADV-ZB-3i1"/>
-                                    <constraint firstItem="McA-ek-MGl" firstAttribute="top" secondItem="yLD-kn-BN7" secondAttribute="top" constant="32" id="GrH-6c-KJO"/>
-                                    <constraint firstAttribute="centerX" secondItem="FsF-NH-D5w" secondAttribute="centerX" id="INR-ki-xyx"/>
-                                    <constraint firstAttribute="centerX" secondItem="McA-ek-MGl" secondAttribute="centerX" id="VWx-bB-xuo"/>
+                                    <constraint firstAttribute="width" constant="300" id="G5M-ah-Bdr">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="pxH-8W-8Eg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                 </constraints>
-                            </scrollView>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView2" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-NH-D5w" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="364" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="OvS-vA-rEG">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="va4-KL-i18">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView3" translatesAutoresizingMaskIntoConstraints="NO" id="w9W-MP-oRe" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="364" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5K2-8I-BeK">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="wCa-b4-UT5">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView4" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-N1-t2c" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="32" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="9Cd-EC-Eyv">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="300" id="Pj2-le-b7f">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView5" translatesAutoresizingMaskIntoConstraints="NO" id="zVn-0b-8jU" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="364" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0Wj-NS-yNr">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="300" id="J3N-FW-k4z">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView6" translatesAutoresizingMaskIntoConstraints="NO" id="NDx-AC-ZBX" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="364" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UGq-Px-ivX">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="l6R-mh-aFs">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView7" translatesAutoresizingMaskIntoConstraints="NO" id="ba8-Mt-CGI" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="32" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="BND-qp-TW4">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="QK5-OG-YX7">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView8" translatesAutoresizingMaskIntoConstraints="NO" id="lzD-0K-OUj" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="32" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="eTa-up-fbO">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="fSI-z5-tea">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="progressView9" translatesAutoresizingMaskIntoConstraints="NO" id="KKv-Ew-IIB" customClass="UAProgressView">
+                                <rect key="frame" x="134" y="32" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1ps-hw-Ban">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="300" id="7vK-5n-LlH">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="250" y="150" width="300" height="300"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="yLD-kn-BN7" secondAttribute="bottom" id="QNJ-tT-aMJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yLD-kn-BN7" secondAttribute="trailing" id="VWN-Uk-Mhf"/>
-                            <constraint firstItem="yLD-kn-BN7" firstAttribute="leading" secondItem="Nn5-v8-irt" secondAttribute="leadingMargin" id="mLu-ku-2H6"/>
-                            <constraint firstItem="yLD-kn-BN7" firstAttribute="top" secondItem="Nn5-v8-irt" secondAttribute="topMargin" id="xQL-7t-BzA"/>
+                            <constraint firstItem="2V4-N1-t2c" firstAttribute="leading" secondItem="Nn5-v8-irt" secondAttribute="leadingMargin" constant="64" id="1IM-gv-yGt"/>
+                            <constraint firstItem="NDx-AC-ZBX" firstAttribute="top" secondItem="w9W-MP-oRe" secondAttribute="bottom" constant="32" id="3Mk-9u-39T"/>
+                            <constraint firstAttribute="centerX" secondItem="zVn-0b-8jU" secondAttribute="centerX" id="9Si-Zy-grN"/>
+                            <constraint firstItem="McA-ek-MGl" firstAttribute="top" secondItem="8eE-sH-Y1I" secondAttribute="bottom" constant="8" id="GxO-dg-xew">
+                                <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                            </constraint>
+                            <constraint firstItem="2V4-N1-t2c" firstAttribute="top" secondItem="McA-ek-MGl" secondAttribute="bottom" constant="8" id="I1W-hh-XZK">
+                                <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="FsF-NH-D5w" secondAttribute="centerX" id="IrP-ka-jlt"/>
+                            <constraint firstItem="FsF-NH-D5w" firstAttribute="top" secondItem="8eE-sH-Y1I" secondAttribute="bottom" constant="74" id="K2V-1N-oSx">
+                                <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="w9W-MP-oRe" secondAttribute="trailing" constant="64" id="Kb6-R7-nFD"/>
+                            <constraint firstAttribute="centerX" secondItem="lzD-0K-OUj" secondAttribute="centerX" id="LyG-RJ-bTk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NDx-AC-ZBX" secondAttribute="trailing" constant="64" id="YiW-B5-NP6"/>
+                            <constraint firstItem="w9W-MP-oRe" firstAttribute="top" secondItem="8eE-sH-Y1I" secondAttribute="bottom" constant="8" id="aWv-dH-K0d">
+                                <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="KKv-Ew-IIB" secondAttribute="trailing" constant="64" id="huK-5C-c0a"/>
+                            <constraint firstItem="McA-ek-MGl" firstAttribute="leading" secondItem="Nn5-v8-irt" secondAttribute="leadingMargin" constant="64" id="j41-2k-IyD">
+                                <variation key="heightClass=regular-widthClass=regular" constant="64"/>
+                            </constraint>
+                            <constraint firstItem="ba8-Mt-CGI" firstAttribute="leading" secondItem="Nn5-v8-irt" secondAttribute="leadingMargin" constant="64" id="jt7-dB-69M"/>
+                            <constraint firstItem="lzD-0K-OUj" firstAttribute="top" secondItem="zVn-0b-8jU" secondAttribute="bottom" constant="32" id="mby-8k-6CL"/>
+                            <constraint firstItem="zVn-0b-8jU" firstAttribute="top" secondItem="FsF-NH-D5w" secondAttribute="bottom" constant="32" id="t8T-TD-zRh"/>
+                            <constraint firstItem="KKv-Ew-IIB" firstAttribute="top" secondItem="NDx-AC-ZBX" secondAttribute="bottom" constant="32" id="tVj-a8-b4s"/>
+                            <constraint firstItem="ba8-Mt-CGI" firstAttribute="top" secondItem="2V4-N1-t2c" secondAttribute="bottom" constant="32" id="zCh-Px-X8h"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="McA-ek-MGl"/>
+                                <exclude reference="FsF-NH-D5w"/>
+                                <exclude reference="w9W-MP-oRe"/>
+                                <exclude reference="2V4-N1-t2c"/>
+                                <exclude reference="zVn-0b-8jU"/>
+                                <exclude reference="NDx-AC-ZBX"/>
+                                <exclude reference="ba8-Mt-CGI"/>
+                                <exclude reference="lzD-0K-OUj"/>
+                                <exclude reference="KKv-Ew-IIB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1IM-gv-yGt"/>
+                                <exclude reference="I1W-hh-XZK"/>
+                                <exclude reference="huK-5C-c0a"/>
+                                <exclude reference="tVj-a8-b4s"/>
+                                <exclude reference="GxO-dg-xew"/>
+                                <exclude reference="j41-2k-IyD"/>
+                                <exclude reference="jt7-dB-69M"/>
+                                <exclude reference="zCh-Px-X8h"/>
+                                <exclude reference="LyG-RJ-bTk"/>
+                                <exclude reference="mby-8k-6CL"/>
+                                <exclude reference="IrP-ka-jlt"/>
+                                <exclude reference="K2V-1N-oSx"/>
+                                <exclude reference="3Mk-9u-39T"/>
+                                <exclude reference="YiW-B5-NP6"/>
+                                <exclude reference="Kb6-R7-nFD"/>
+                                <exclude reference="aWv-dH-K0d"/>
+                                <exclude reference="9Si-Zy-grN"/>
+                                <exclude reference="t8T-TD-zRh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="McA-ek-MGl"/>
+                                <include reference="FsF-NH-D5w"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="w9W-MP-oRe"/>
+                                <include reference="2V4-N1-t2c"/>
+                                <include reference="zVn-0b-8jU"/>
+                                <include reference="NDx-AC-ZBX"/>
+                                <include reference="ba8-Mt-CGI"/>
+                                <include reference="lzD-0K-OUj"/>
+                                <include reference="KKv-Ew-IIB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1IM-gv-yGt"/>
+                                <include reference="I1W-hh-XZK"/>
+                                <include reference="huK-5C-c0a"/>
+                                <include reference="tVj-a8-b4s"/>
+                                <include reference="GxO-dg-xew"/>
+                                <include reference="j41-2k-IyD"/>
+                                <include reference="jt7-dB-69M"/>
+                                <include reference="zCh-Px-X8h"/>
+                                <include reference="LyG-RJ-bTk"/>
+                                <include reference="mby-8k-6CL"/>
+                                <include reference="IrP-ka-jlt"/>
+                                <include reference="K2V-1N-oSx"/>
+                                <include reference="3Mk-9u-39T"/>
+                                <include reference="YiW-B5-NP6"/>
+                                <include reference="Kb6-R7-nFD"/>
+                                <include reference="aWv-dH-K0d"/>
+                                <include reference="9Si-Zy-grN"/>
+                                <include reference="t8T-TD-zRh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="VhS-0t-NbY">
                         <barButtonItem key="rightBarButtonItem" title="Rio" id="UCt-8X-aEC">
@@ -150,9 +344,15 @@ iBeaconのデモアプリです</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="progressView" destination="McA-ek-MGl" id="CTf-jx-wV9"/>
+                        <outlet property="progressView1" destination="McA-ek-MGl" id="kQC-cQ-EjG"/>
                         <outlet property="progressView2" destination="FsF-NH-D5w" id="Yp0-yE-cQx"/>
-                        <outlet property="scrollView" destination="yLD-kn-BN7" id="noc-54-GnY"/>
+                        <outlet property="progressView3" destination="w9W-MP-oRe" id="eYp-5V-93C"/>
+                        <outlet property="progressView4" destination="2V4-N1-t2c" id="mLd-Qv-DbQ"/>
+                        <outlet property="progressView5" destination="zVn-0b-8jU" id="Yb9-lX-n6U"/>
+                        <outlet property="progressView6" destination="NDx-AC-ZBX" id="T6a-2P-sjk"/>
+                        <outlet property="progressView7" destination="ba8-Mt-CGI" id="5CZ-v9-EoH"/>
+                        <outlet property="progressView8" destination="lzD-0K-OUj" id="09Z-n7-875"/>
+                        <outlet property="progressView9" destination="KKv-Ew-IIB" id="mQH-Zn-c8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCH-Eh-c92" userLabel="First Responder" sceneMemberID="firstResponder"/>
