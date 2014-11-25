@@ -31,7 +31,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="HEj-1W-qe7"/>
                                 </constraints>
-                                <string key="text">デモアプリでは、GeoFencingを利用した通知表示と2つのビーコンモジュールとの距離をモニタリングするアプリとなっております。
+                                <string key="text">デモアプリでは、GeoFencingを利用した通知表示と9つのビーコンモジュールとの距離をモニタリングするアプリとなっております。
 
 下の「開始」ボタンをタップして、iBeacon を実際に体験してみてください。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -53,10 +53,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4NP-vg-AT2"/>
                                 </constraints>
-                                <string key="text">「開始」ボタンをタップすると、２つのビーコンモジュールの距離をモニタリングする画面となります。
+                                <string key="text">「開始」ボタンをタップすると、9つのビーコンモジュールの距離をモニタリングする画面となります。
 
-上の円はビーコン１の推定距離を表示し、下の円はビーコン２の推定距離を表示します。
-また、次の画面を起動した後にアプリを閉じ、ビーコンの電波を受信できない位置に移動すると通知を送るようになっており、また逆に、ビーコンの電波のエリアに入るときも通知を送る仕組みを体験できます。</string>
+9つのビーコンは、この部屋の4角と真ん中に3つをおいています。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
