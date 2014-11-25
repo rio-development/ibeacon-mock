@@ -34,24 +34,24 @@
     self.navigationController.topViewController.title = @"モニタリング中";
 
     // Do any additional setup after loading the view.
-    self.progressView1.lineWidth = 16.0;
-    self.progressView1.borderWidth = 0.0;
-    self.progressView2.lineWidth = 16.0;
-    self.progressView2.borderWidth = 0.0;
-    self.progressView3.lineWidth = 16.0;
-    self.progressView3.borderWidth = 0.0;
-    self.progressView4.lineWidth = 16.0;
-    self.progressView4.borderWidth = 0.0;
-    self.progressView5.lineWidth = 16.0;
-    self.progressView5.borderWidth = 0.0;
-    self.progressView6.lineWidth = 16.0;
-    self.progressView6.borderWidth = 0.0;
-    self.progressView7.lineWidth = 16.0;
-    self.progressView7.borderWidth = 0.0;
-    self.progressView8.lineWidth = 16.0;
-    self.progressView8.borderWidth = 0.0;
-    self.progressView9.lineWidth = 16.0;
-    self.progressView9.borderWidth = 0.0;
+    self.progressView1.lineWidth = 8.0;
+    self.progressView1.borderWidth = 1.0;
+    self.progressView2.lineWidth = 8.0;
+    self.progressView2.borderWidth = 1.0;
+    self.progressView3.lineWidth = 8.0;
+    self.progressView3.borderWidth = 1.0;
+    self.progressView4.lineWidth = 8.0;
+    self.progressView4.borderWidth = 1.0;
+    self.progressView5.lineWidth = 8.0;
+    self.progressView5.borderWidth = 1.0;
+    self.progressView6.lineWidth = 8.0;
+    self.progressView6.borderWidth = 1.0;
+    self.progressView7.lineWidth = 8.0;
+    self.progressView7.borderWidth = 1.0;
+    self.progressView8.lineWidth = 8.0;
+    self.progressView8.borderWidth = 1.0;
+    self.progressView9.lineWidth = 8.0;
+    self.progressView9.borderWidth = 1.0;
     
     if ([CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
         // CLLocationManager の生成とデリゲートの設定
@@ -77,9 +77,9 @@
         progressChangedBlock = ^(UAProgressView *progressView, float progress) {
             NSString *mm;
             if (progress > 0) {
-                mm = [NSString stringWithFormat:@"約%2.2fm", progress * 10];
+                mm = [NSString stringWithFormat:@"約%2.2fm", progress * 30];
             } else {
-                mm = @"不明";
+                mm = @"";
             }
             [(UILabel *)progressView.centralView setText:mm];
         };
@@ -224,7 +224,7 @@
                 case CLProximityImmediate:
                 case CLProximityNear:
                 case CLProximityFar:
-                    progress = beacon.accuracy / 10;
+                    progress = beacon.accuracy / 30;
                     break;
                 case CLProximityUnknown:
                     break;
